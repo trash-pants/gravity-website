@@ -1,0 +1,78 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add rotation animation */
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    color: white;
+}
+
+/* Add mobile-specific styles */
+@media screen and (max-width: 768px) {
+    body {
+        background-position: 64% center;
+    }
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+/* Remove all form styles */
+#rotating-sky {
+    position: fixed;
+    top: -150%;
+    left: -250%;
+    width: 600%;
+    height: 600%;
+    object-fit: contain;
+    z-index: -2;
+    transform-origin: center center;
+}
+
+#tree-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#logo {
+    width:50%;
+    height: auto;
+    z-index: 1;
+} 
