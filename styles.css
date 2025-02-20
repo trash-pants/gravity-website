@@ -6,14 +6,17 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Big Shoulders Display', sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
     height: 100vh;
     overflow: hidden;
     position: relative;
     color: white;
-    background-color: orange;
+    background-image: url('images/background.png');
+    background-size: 120%;
+    background-position: center 50%;
+    background-repeat: no-repeat;
 }
 
 /* Main content styles */
@@ -23,18 +26,28 @@ main {
     padding: 2rem;
     height: 100%;
     overflow-y: hidden;
+    /* Add flexbox properties */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: left;
 }
 
 section {
     margin-bottom: 2rem;
+    max-width: 60%;
 }
 
 h1, h2 {
     margin-bottom: 1rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
+
 #logo {
-    width: 67%;
+    width: 80%;
     height: auto;
     z-index: 1;
     margin-top: 10vh;
@@ -45,21 +58,105 @@ h1, h2 {
 
 #ornament {
     position: fixed;
-    width: 37%;
-    min-width: 500px;
-    bottom: -6%;
-    right: 0%;
+    width: 55%;
+    min-width: 800px;
+    bottom: -32%;
+    right: -10%;
     height: auto;
     z-index: -1;
 }
 
 #wave {
     position: absolute;
-    width: 60%;
-    min-width: 800px;
+    width: 50%;
+    min-width: 700px;
     height: auto;
-    bottom: -10%;
-    right: -10%;
+    bottom: 10%;
+    right: 5%;
     z-index: -2;
-    transform: rotate(15deg);
+}
+
+/* Tablet breakpoint (768px - 1024px) */
+@media (max-width: 1110px) {
+    body {
+        background-size: 140%;
+        background-position: center 40%;
+    }
+
+    main {
+        max-width: 90%;
+        padding: 1.5rem;
+        height: 100vh;
+        justify-content: flex-end;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    section {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    #logo {
+        width: 100%;
+        margin-top: 5vh;
+    }
+
+    #ornament {
+        width: 80%;
+        min-width: 700px;
+        bottom: -25%;
+        right: -30%;
+    }
+
+    #wave {
+        width: 60%;
+        min-width: 500px;
+        bottom: 20%;
+        right: -5%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        background-size: 200%;
+        background-position: 50% 20%;
+    }
+
+    main {
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: .7rem;
+    }
+
+    #wave {
+        bottom: 0%;
+    }
+
+    #ornament {
+        width: 20%;
+        min-width: 400px;
+        bottom: -20%;
+        right: -18%;
+    }
 }
