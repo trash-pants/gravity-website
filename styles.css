@@ -17,7 +17,6 @@ body {
     background-size: 120%;
     background-position: center 50%;
     background-repeat: no-repeat;
-    min-width: 450px;
 }
 
 /* Main content styles */
@@ -165,11 +164,11 @@ h2 {
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
-    #subtitle {
-        min-width: 500px;
+    h3 {
+        font-size: 1rem;
     }
 
     #wave {
