@@ -17,6 +17,7 @@ body {
     background-size: 120%;
     background-position: center 50%;
     background-repeat: no-repeat;
+    min-width: 450px;
 }
 
 /* Main content styles */
@@ -47,7 +48,7 @@ h2 {
 }
 
 #logo {
-    width: 80%;
+    width: 95%;
     height: auto;
     z-index: 1;
     margin-top: 10vh;
@@ -74,6 +75,27 @@ h2 {
     bottom: 10%;
     right: 5%;
     z-index: -2;
+}
+
+#social {
+    max-width: 100%;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover img {
+    opacity: 1;
 }
 
 /* Tablet breakpoint (768px - 1024px) */
@@ -134,7 +156,8 @@ h2 {
     main {
         justify-content: flex-start;
         align-items: flex-start;
-        overflow-y: auto;
+        overflow: auto;
+        max-width: 100%;
     }
 
     section {
@@ -142,11 +165,11 @@ h2 {
     }
 
     h2 {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
     }
 
-    h3 {
-        font-size: .7rem;
+    #subtitle {
+        min-width: 500px;
     }
 
     #wave {
@@ -158,5 +181,10 @@ h2 {
         min-width: 400px;
         bottom: -20%;
         right: -18%;
+    }
+    
+    .social-icon img {
+        width: 30px;
+        height: 30px;
     }
 }
