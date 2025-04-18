@@ -11,33 +11,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="background"></div>
     <main>
-        <section id="title">
-            <img id="logo" src="images/logo.png" alt="Logo">
-            <img id="wave" src="images/wave.png" alt="Wave">
-            <img id="ornament" src="images/ornament.png" alt="Ornament">
+        <div id="hero">
+            <section id="title">
+                <img id="logo" src="images/logo.png" alt="Logo">
+                <img id="wave" src="images/wave.png" alt="Wave">
+                <img id="ornament" src="images/ornament.png" alt="Ornament">
+            </section>
+                
+            <section id="subtitle">
+                <h2>Created by Ken Savage, Joel Chapman, Jessia Hoffman,</br>Weston Gaylord, and Matt Herrero</h2>
+            </section>
+                
+            <section id="social">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/gravity_musical" class="social-icon">
+                        <img src="images/socials/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/gravitymusical/" class="social-icon">
+                        <img src="images/socials/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon">
+                        <img src="images/socials/youtube.png" alt="Youtube">
+                    </a>
+                </div>
+            </section>
+        </div>
+        
+        <section id="sizzle">
+            <video autoplay muted loop playsinline>
+                <source src="images/sizzle.webm" type="video/webm">
+            </video>
         </section>
-
-        <section id="subtitle">
-            <h2>Created by Ken Savage, Joel Chapman, Jessia Hoffman,</br>Weston Gaylord, and Matt Herrero</h2>
-            <h3>Full Website Coming Soon</h3>
+            
+        <section id="about">
+            <h2>ABOUT THE SHOW</h2>
+            <h3>The Father of Modern Physics...<br>The Mother of Science Fiction...<br>And the Inventor of Time Travel!</h3>
+            <p>When physics prodigy Sophie is catapulted back in time, her meet-cute with 23-year old Isaac Newton prevents
+               him from discovering gravity — trapping Sophie in 1666. To return home, Sophie must restore history and
+               navigate the Enlightenment, where Natural Philosophers are the pop stars of their day. Along the way, she
+               encounters historical luminaries such as up-and-comer Edmond Halley, Isaac's rival Gottfried Wilhelm von
+               Leibniz, and the unknown author Margaret Cavendish, who is embroiled in her own quest for fame and
+               scientific recognition.
+            </p>
         </section>
-
-        <section id="social">
-            <div class="social-icons">
-                <a href="https://www.instagram.com/gravity_musical" class="social-icon">
-                    <img src="images/socials/instagram.png" alt="Instagram">
-                </a>
-                <a href="https://www.facebook.com/gravitymusical/" class="social-icon">
-                    <img src="images/socials/facebook.png" alt="Facebook">
-                </a>
-                <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon">
-                    <img src="images/socials/youtube.png" alt="Youtube">
-                </a>
+        
+        <section id="video">
+            <div class="video-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
             </div>
         </section>
     </main>
-
-    <script src="script.js"></script>
 </body>
 </html> 

@@ -9,33 +9,61 @@ body {
     font-family: 'Big Shoulders Display', sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     position: relative;
     color: white;
     background-image: url('images/background.png');
     background-size: 120%;
     background-position: center 50%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.png'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
 }
 
 /* Main content styles */
 main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    height: 100%;
-    overflow-y: hidden;
-    /* Add flexbox properties */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: left;
 }
 
-section {
+section:not(#sizzle) {
     margin-bottom: 2rem;
     max-width: 60%;
+    padding: 2rem;
+    margin: 2rem;
 }
 
 h1, h2 {
@@ -44,6 +72,16 @@ h1, h2 {
 
 h2 {
     font-size: 1.5rem;
+}
+
+#hero {
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    /* overflow: hidden; */
 }
 
 #logo {
@@ -57,7 +95,7 @@ h2 {
 }
 
 #ornament {
-    position: fixed;
+    position: absolute;
     width: 55%;
     min-width: 800px;
     bottom: -32%;
@@ -97,6 +135,67 @@ h2 {
     opacity: 1;
 }
 
+#video {
+    max-width: 80%;
+    margin: 4rem auto;
+    width: 100%;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#about {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+#about h2 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#about h3 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#sizzle {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    margin: 0;
+    align-self: stretch;
+}
+
+#sizzle video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Tablet breakpoint (768px - 1024px) */
 @media (max-width: 1110px) {
     body {
@@ -105,12 +204,8 @@ h2 {
     }
 
     main {
-        max-width: 90%;
-        padding: 1.5rem;
-        height: 100vh;
         justify-content: flex-end;
         align-items: flex-start;
-        overflow-y: auto;
     }
 
     section {
@@ -143,13 +238,21 @@ h2 {
         bottom: 20%;
         right: -5%;
     }
+
+    #video {
+        max-width: 90%;
+        margin: 3rem auto;
+    }
 }
 
 @media (max-width: 768px) {
-
     body {
         background-size: 200%;
         background-position: 50% 20%;
+    }
+
+    .container {
+        max-width: 100%;
     }
 
     main {
@@ -185,5 +288,10 @@ h2 {
     .social-icon img {
         width: 30px;
         height: 30px;
+    }
+
+    #video {
+        max-width: 100%;
+        margin: 2rem auto;
     }
 }
