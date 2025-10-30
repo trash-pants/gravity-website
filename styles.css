@@ -20,23 +20,6 @@ body {
     overflow: auto;
 }
 
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/background.png'); /* Replace with your background image path */
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-}
-
-.content {
-    position: relative;
-    z-index: 1;
-}
-
 /* Main content styles */
 main {
     width: 100%;
@@ -47,16 +30,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: left;
 }
 
 section:not(#sizzle) {
@@ -75,64 +48,42 @@ h2 {
 }
 
 #hero {
-    height: 95vh;
     width: 100%;
+    padding: 2rem;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
-    /* overflow: hidden; */
+}
+
+#hero > * {
+    min-width: 0;
+    min-height: 0;
+    flex-shrink: 1;
+}
+
+#hero img {
+    max-width: 40%;
+    height: auto;
 }
 
 #logo {
-    width: 95%;
+    min-width: 90%;
     height: auto;
-    z-index: 1;
-    margin-top: 10vh;
-    display: block;
-    margin-left: none;
-    margin-right: none;
-}
-
-#ornament {
-    position: absolute;
-    width: 55%;
-    min-width: 800px;
-    bottom: -32%;
-    right: -10%;
-    height: auto;
-    z-index: -1;
-}
-
-#wave {
-    position: absolute;
-    width: 50%;
-    min-width: 700px;
-    height: auto;
-    bottom: 10%;
-    right: 5%;
-    z-index: -2;
-}
-
-#social {
-    max-width: 100%;
+    padding: 2rem 2rem 2rem 0;
 }
 
 .social-icons {
     display: flex;
-    gap: 1.5rem;
     align-items: center;
 }
 
-.social-icon img {
-    width: 24px;
-    height: 24px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+.social-icon + .social-icon {
+    margin-left: 2rem;
 }
 
-.social-icon:hover img {
-    opacity: 1;
+.social-icon img {
+    width: 3rem;
+    height: 3rem;
 }
 
 #video {
@@ -220,25 +171,6 @@ h2 {
         font-size: 1.3rem;
     }
 
-    #logo {
-        width: 100%;
-        margin-top: 5vh;
-    }
-
-    #ornament {
-        width: 80%;
-        min-width: 700px;
-        bottom: -25%;
-        right: -30%;
-    }
-
-    #wave {
-        width: 60%;
-        min-width: 500px;
-        bottom: 20%;
-        right: -5%;
-    }
-
     #video {
         max-width: 90%;
         margin: 3rem auto;
@@ -273,18 +205,7 @@ h2 {
     h3 {
         font-size: .7rem;
     }
-    
-    #wave {
-        bottom: 0%;
-    }
 
-    #ornament {
-        width: 20%;
-        min-width: 400px;
-        bottom: -20%;
-        right: -18%;
-    }
-    
     .social-icon img {
         width: 30px;
         height: 30px;
