@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="form-handler.js" defer></script>
 </head>
 <body>
     <div class="background"></div>
@@ -16,8 +17,25 @@
         <div id="hero">
             <div id="title">
                 <img id="logo" src="images/logo.png" alt="Logo">
-                <h2>Created by Ken Savage, Joel Chapman, Jessia Hoffman,</br>Weston Gaylord, and Matt Herrero</h2>
-                <div id="social-icons">
+                <div id="desktop-subtitles">
+                    <h2>Created by Ken Savage, Joel Chapman, Jessia Hoffman,</br>Weston Gaylord, and Matt Herrero</h2>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/gravity_musical" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <img src="images/socials/instagram.png" alt="Instagram">
+                        </a>
+                        <a href="https://www.facebook.com/gravitymusical/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <img src="images/socials/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <img src="images/socials/youtube.png" alt="Youtube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <img id="ornament" src="images/wiggle-ornament.png" alt="Ornamnet">
+            <div id="mobile-subtitles">
+                <h2>Created by</br>Ken Savage, Joel Chapman, Jessia Hoffman,</br>Weston Gaylord, and Matt Herrero</h2>
+                <div class="social-icons">
                     <a href="https://www.instagram.com/gravity_musical" class="social-icon" target="_blank" rel="noopener noreferrer">
                         <img src="images/socials/instagram.png" alt="Instagram">
                     </a>
@@ -29,7 +47,6 @@
                     </a>
                 </div>
             </div>
-            <img id="ornament" src="images/wiggle-ornament.png" alt="Ornamnet">
         </div>
         
         <section id="sizzle">
@@ -41,23 +58,63 @@
         <section id="about">
             <h2>ABOUT THE SHOW</h2>
             <h3>The Father of Modern Physics...<br>The Mother of Science Fiction...<br>And the Inventor of Time Travel!</h3>
-            <p>When physics prodigy Sophie is catapulted back in time, her meet-cute with 23-year old Isaac Newton prevents
+            <p>When physics prodigy <em>Sophie</em> is catapulted back in time, her meet-cute with 23-year old <em>Isaac Newton</em> prevents
                him from discovering gravity — trapping Sophie in 1666. To return home, Sophie must restore history and
                navigate the Enlightenment, where Natural Philosophers are the pop stars of their day. Along the way, she
-               encounters historical luminaries such as up-and-comer Edmond Halley, Isaac's rival Gottfried Wilhelm von
-               Leibniz, and the unknown author Margaret Cavendish, who is embroiled in her own quest for fame and
+               encounters historical luminaries such as up-and-comer <em>Edmond Halley</em>, Isaac's rival <em>Gottfried Wilhelm von
+               Leibniz</em>, and the unknown author <em>Margaret Cavendish</em>, who is embroiled in her own quest for fame and
                scientific recognition.
+            </p>
+            <h3>Gravity is a hilarious romantic comedy that mixes</br> 
+                madcap time travel mayhem with real history and science.
+            </h3>
+            <p>
+                <em>Run-Time:</em> 2 acts, 2 hours 15 minutes</br>
+                <em>Cast Size:</em> 13 (5W, 7M, 1 queer/non-binary role).</br>Diverse casting is essential.
             </p>
         </section>
         
         <section id="video">
             <div class="video-container">
-                <iframe width="100%" height="100%" src="https://youtube.com/watch?v=E2mxYt8xMCI" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/E2mxYt8xMCI" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
         </section>
+
+        <section id="newsletter-form">
+            <h2>SIGN UP FOR GRAVITY UPDATES</h2>
+            <form id="newsletter-form-component">
+                <input id="newsletter-email" type="email" name="email" placeholder="Type your email..." required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="newsletter-message" style="margin-top: 1rem; display: none;"></p>
+        </section>
+
+        <section id="contact">
+            <h2>SAY HELLO!</h2>
+            <h2 id="contact-email"><a href="mailto:gravitythemusical@gmail.com">gravitythemusical@gmail.com</a></h2>
+        </section>
+
+        <section id="footer-socials">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/gravity_musical" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/socials/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/gravitymusical/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/socials/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon" target="_blank" rel="noopener noreferrer">
+                    <img src="images/socials/youtube.png" alt="Youtube">
+                </a>
+            </div>
+        </section>
+
+        <section id="sock">
+            <img src="images/sock.png" alt="Sock">
+        </section>
+
     </main>
 </body>
 </html> 
