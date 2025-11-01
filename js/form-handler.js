@@ -8,6 +8,14 @@
 // Replace this with your Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwqa9qW7eVUIDulb-nB1DPZseivFMwu88EOH0IpH8d16qJB_pHa7R54SDpsGpL60yl6/exec';
 
+// Debug mode: enable by adding ?debug=true to URL or setting window.DEBUG = true
+const DEBUG = window.DEBUG || (new URLSearchParams(window.location.search).get('debug') === 'true');
+
+// Helper function for conditional error logging
+const debugError = (...args) => {
+    if (DEBUG) console.error(...args);
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('newsletter-form-component');
     const messageElement = document.getElementById('newsletter-message');
@@ -64,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
                 
             } catch (error) {
-                console.error('Error:', error);
+                debugError('Error:', error);
                 showMessage('Sorry, there was an error. Please try again.', 'error');
             } finally {
                 // Re-enable submit button after a delay
