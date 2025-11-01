@@ -13,11 +13,22 @@ body {
     min-height: 100vh;
     position: relative;
     color: white;
+    background: none;
+}
+
+/* Fixed background div for mobile compatibility */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background-image: url('images/background.png');
     background-size: 240%;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    display: block;
 }
 
 /* Main content styles */
@@ -30,6 +41,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 h1, h2 {
@@ -251,7 +264,7 @@ section {
 }
 
 @media (min-width: 768px) {
-    body {
+    .background {
         background-size: 160%;
         background-position: center;
     }
@@ -329,9 +342,16 @@ section {
 }
 
 @media (min-width: 1024px) {
+    .background {
+        display: none;
+    }
+    
     body {
-        background-size: 150%;
+        background-size: 170%;
+        background-image: url('images/background.png');
         background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 
     #hero {
