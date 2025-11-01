@@ -216,6 +216,11 @@ h3 {
     font-size: 1rem; /* Prevent mobile zoom on focus (16px = 1rem) */
 }
 
+#newsletter-form input::placeholder {
+    color: black;
+    opacity: 1; /* Firefox uses opacity for placeholder color */
+}
+
 #newsletter-form button {
     background: white;
     color: black;
