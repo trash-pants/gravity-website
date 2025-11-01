@@ -213,12 +213,14 @@ h3 {
     background: transparent;
     border-radius: .5rem 0 0 .5rem;
     width: 60%;
+    font-size: 1rem; /* Prevent mobile zoom on focus (16px = 1rem) */
 }
 
 #newsletter-form button {
     background: white;
     color: black;
     border-radius: 0 .5rem .5rem 0;
+    font-size: 1rem;
 }
 
 #sock {
