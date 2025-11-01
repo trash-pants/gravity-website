@@ -13,7 +13,8 @@
     <link rel="preload" href="images/logo.png" as="image" fetchpriority="high">
     <link rel="preload" href="images/sizzle.webm" as="video" type="video/webm">
     <link rel="stylesheet" href="styles.css">
-    <script src="form-handler.js" defer></script>
+    <script src="js/form-handler.js" defer></script>
+    <script src="js/sizzle-video.js" defer></script>
 </head>
 <body>
     <div class="background"></div>
@@ -54,7 +55,7 @@
         </div>
         
         <section id="sizzle">
-            <video autoplay muted loop playsinline preload="auto" width="100%" height="100%">
+            <video id="sizzle-video" autoplay muted loop playsinline preload="auto" width="100%" height="100%">
                 <source src="images/sizzle.webm" type="video/webm">
                 <source src="images/sizzle.mov" type="video/quicktime">
             </video>
@@ -81,7 +82,7 @@
         
         <section id="video">
             <div class="video-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/E2mxYt8xMCI" title="YouTube video player"
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bbv_ZrF4rSg" title="YouTube video player"
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
