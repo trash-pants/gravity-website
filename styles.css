@@ -3,187 +3,417 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
     font-family: 'Big Shoulders Display', sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
     position: relative;
     color: white;
+    background: none;
+}
+
+/* Fixed background div for mobile compatibility */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background-image: url('images/background.png');
-    background-size: 120%;
-    background-position: center 50%;
+    background-size: 240%;
+    background-position: center;
     background-repeat: no-repeat;
+    display: block;
 }
 
 /* Main content styles */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    height: 100%;
-    overflow-y: hidden;
-    /* Add flexbox properties */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: left;
-}
-
-section {
-    margin-bottom: 2rem;
-    max-width: 60%;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 h1, h2 {
     margin-bottom: 1rem;
 }
 
+p em {
+    font-weight: bold;
+}
+
 h2 {
     font-size: 1.5rem;
 }
 
+h3 {
+    font-size: .7rem;
+}
+
+#hero {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+}
+
+#hero > * {
+    min-width: 0;
+    min-height: 0;
+    flex-shrink: 1;
+}
+
+#title {
+    text-align: center;
+}
+
+#hero h2 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+#hero img {
+    height: auto;
+}
+
+#desktop-subtitles {
+    display: none;
+}
+
 #logo {
     width: 95%;
+    max-width: 20rem;
     height: auto;
-    z-index: 1;
-    margin-top: 10vh;
-    display: block;
-    margin-left: none;
-    margin-right: none;
+    padding: 0;
 }
 
 #ornament {
-    position: fixed;
-    width: 55%;
-    min-width: 800px;
-    bottom: -32%;
-    right: -10%;
-    height: auto;
-    z-index: -1;
-}
-
-#wave {
-    position: absolute;
-    width: 50%;
-    min-width: 700px;
-    height: auto;
-    bottom: 10%;
-    right: 5%;
-    z-index: -2;
-}
-
-#social {
-    max-width: 100%;
+    width: 70%;
+    max-width: 17rem;
 }
 
 .social-icons {
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
     align-items: center;
 }
 
+.social-icon + .social-icon {
+    margin-left: 2rem;
+}
+
 .social-icon img {
-    width: 24px;
-    height: 24px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.social-icon:hover img {
-    opacity: 1;
+#video {
+    width: 100%;
+    max-width: 80%;
+    margin: 2rem auto;
 }
 
-/* Tablet breakpoint (768px - 1024px) */
-@media (max-width: 1110px) {
-    body {
-        background-size: 140%;
-        background-position: center 40%;
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#sizzle {
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    margin: 0;
+    align-self: stretch;
+}
+
+#sizzle video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about {
+    text-align: center;
+    margin: 2rem auto 1rem auto;
+    width: 100%;
+    max-width: 42rem;
+    padding: 0 1rem;
+}
+
+#about > * {
+    margin-bottom: 1.4rem;
+}
+
+#about h2 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 3.5rem;
+}
+
+#about h3 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#newsletter-form, #contact {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#newsletter-form {
+    max-width: 40rem;
+}
+
+#newsletter-form form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#newsletter-form form input, #newsletter-form form button {
+    padding: .4rem;
+    margin: 0;
+    border: .2rem solid white;
+}
+
+#newsletter-form input {
+    background: transparent;
+    border-radius: .5rem 0 0 .5rem;
+    width: 60%;
+    font-size: 1rem; /* Prevent mobile zoom on focus (16px = 1rem) */
+}
+
+#newsletter-form button {
+    background: white;
+    color: black;
+    border-radius: 0 .5rem .5rem 0;
+    font-size: 1rem;
+}
+
+#sock {
+    position: relative;
+    margin: 1rem 0 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    align-self: stretch;
+}
+
+#sock img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#contact h2 {
+    margin-bottom: .2rem;
+}
+
+#contact h2 a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact h3 a:hover {
+    text-decoration: underline;
+}
+
+#footer-socials {
+    margin: 1rem 0;
+}
+
+section {
+    margin: 2rem;
+}
+
+@media (min-width: 768px) {
+    .background {
+        background-size: 160%;
+        background-position: center;
     }
 
-    main {
-        max-width: 90%;
-        padding: 1.5rem;
-        height: 100vh;
-        justify-content: flex-end;
-        align-items: flex-start;
-        overflow-y: auto;
+    #hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
     }
 
-    section {
-        max-width: 80%;
-    }
-
-    h1 {
-        font-size: 2rem;
+    #hero h2 {
+        text-align: left;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 2.5rem;
+    }
+
+    #title {
+        text-align: left;
+    }
+    
+    #title h2 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
     }
 
     #logo {
-        width: 100%;
-        margin-top: 5vh;
+        max-width: 40rem;
     }
 
     #ornament {
-        width: 80%;
-        min-width: 700px;
-        bottom: -25%;
-        right: -30%;
+        max-width: 30rem;
+    }
+    
+    #title .social-icons {
+        justify-content: flex-start;
     }
 
-    #wave {
-        width: 60%;
-        min-width: 500px;
-        bottom: 20%;
-        right: -5%;
+    #desktop-subtitles {
+        display: block;
+    }
+
+    #mobile-subtitles {
+        display: none;
+    }
+
+    #sizzle {
+        height: 50vh;
+    }
+
+    #about > * {
+        margin-bottom: 2rem;
+    }
+
+    #about h2 {
+        font-size: 4rem;
+    }
+
+    #about h3 {
+        font-size: 1.5rem;
+    }
+
+    #about p {
+        font-size: 1.2rem;
+    }
+
+    #newsletter-form input, #newsletter-form button {
+        font-size: 1.6rem;
+    }
+    
+    #contact-email a {
+        font-size: 2rem !important;
     }
 }
 
-@media (max-width: 768px) {
-
-    body {
-        background-size: 200%;
-        background-position: 50% 20%;
-    }
-
-    main {
-        justify-content: flex-start;
-        align-items: flex-start;
-        overflow: auto;
-        max-width: 100%;
-    }
-
-    section {
-        max-width: 100%;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    h3 {
-        font-size: .7rem;
+@media (min-width: 1024px) {
+    .background {
+        display: none;
     }
     
-    #wave {
-        bottom: 0%;
+    body {
+        background-size: 170%;
+        background-image: url('images/background.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    #hero {
+        margin: 3rem 0;
+        align-items: flex-end;
+    }
+
+    #contact-email a {
+        font-size: 3rem !important;
+    }
+
+    #logo {
+        max-width: 50rem;
     }
 
     #ornament {
-        width: 20%;
-        min-width: 400px;
-        bottom: -20%;
-        right: -18%;
+        max-width: 32rem;
+    }
+
+    #title h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    #sizzle {
+        height: 80vh;
+    }
+
+    #about {
+        max-width: 60rem;
+    }
+
+    #about > * {
+        margin-bottom: 2.5rem;
     }
     
-    .social-icon img {
-        width: 30px;
-        height: 30px;
+    #about h2 {
+        font-size: 5rem;
+    }
+
+    #about h3 {
+        font-size: 2.2rem;
+    }
+
+    #about p {
+        font-size: 1.6rem;
+    }
+
+    #newsletter-form {
+        max-width: 50rem;
+    }
+
+    #newsletter-form input, #newsletter-form button {
+        font-size: 1.8rem;
+        padding: 1rem !important;
+    }
+
+    #footer-socials img {
+        width: 4rem;
+        height: auto;
+        margin: 3rem 0;
     }
 }
