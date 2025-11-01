@@ -1,0 +1,24 @@
+name: Deploy static site
+
+on:
+  push:
+    branches: [main, dev]   # prod from main; preview from dev
+  pull_request:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .       # directory with index.html
+      - uses: actions/deploy-pages@v4
+        with:
+          preview: ${{ github.ref_name != 'main' }}
