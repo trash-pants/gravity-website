@@ -82,12 +82,18 @@ h3 {
 }
 
 #hero h2 {
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
     font-size: 1rem;
     text-align: center;
 }
 
 #hero img {
     height: auto;
+}
+
+#credits {
+    margin: 1rem 0;
 }
 
 #desktop-subtitles {
@@ -158,7 +164,7 @@ h3 {
     object-fit: cover;
 }
 
-#about {
+.about-section {
     text-align: center;
     margin: 2rem auto 1rem auto;
     width: 100%;
@@ -166,22 +172,22 @@ h3 {
     padding: 0 1rem;
 }
 
-#about > * {
+.about-section > * {
     margin-bottom: 1.4rem;
 }
 
-#about h2 {
+.about-section h2 {
     font-family: 'Big Shoulders Display', sans-serif;
     font-size: 3.5rem;
 }
 
-#about h3 {
+.about-section h3 {
     font-family: 'Big Shoulders Display', sans-serif;
     font-size: 1.2rem;
     font-style: italic;
 }
 
-#about p {
+.about-section p {
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -296,7 +302,10 @@ section {
     
     #title h2 {
         font-size: 1.2rem;
-        margin: 1rem 0;
+    }
+
+    #credits {
+        margin: 1.5rem 0;
     }
 
     #logo {
@@ -323,19 +332,19 @@ section {
         height: 50vh;
     }
 
-    #about > * {
+    .about-section > * {
         margin-bottom: 2rem;
     }
 
-    #about h2 {
+    .about-section h2 {
         font-size: 4rem;
     }
 
-    #about h3 {
+    .about-section h3 {
         font-size: 1.5rem;
     }
 
-    #about p {
+    .about-section p {
         font-size: 1.2rem;
     }
 
@@ -362,7 +371,7 @@ section {
     }
 
     #hero {
-        margin: 3rem 0;
+        margin: 3rem 0 2rem 0;
         align-items: flex-end;
     }
 
@@ -380,6 +389,10 @@ section {
 
     #title h2 {
         font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    #credits {
         margin: 2rem 0;
     }
 
@@ -387,23 +400,23 @@ section {
         height: 80vh;
     }
 
-    #about {
+    .about-section {
         max-width: 60rem;
     }
 
-    #about > * {
+    .about-section > * {
         margin-bottom: 2.5rem;
     }
     
-    #about h2 {
+    .about-section h2 {
         font-size: 5rem;
     }
 
-    #about h3 {
+    .about-section h3 {
         font-size: 2.2rem;
     }
 
-    #about p {
+    .about-section p {
         font-size: 1.6rem;
     }
 
