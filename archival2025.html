@@ -245,8 +245,10 @@
     </div>
 
     <script>
+
+       
         // SHA-256 hash of the password
-        const correctPasswordHash = '064c8ab6ca13c954f93cf494ffa9fe8a4e0cfb006dfbe06a42f7d3936361a991';
+        const correctPasswordHash = '989d6acf27ec984d0aa546b74917a3533fc0bc6407d6ea81965b44c1f592f67f';
         
         // Hash function
         async function hashPassword(password) {
@@ -265,6 +267,7 @@
             const password = document.getElementById('passwordInput').value;
             const errorMsg = document.getElementById('errorMsg');
             const hashedInput = await hashPassword(password);
+            
             
             if (hashedInput === correctPasswordHash) {
                 isLoggedIn = true;
