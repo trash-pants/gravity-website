@@ -226,7 +226,9 @@ body {
 
 .social-icons {
     position: fixed;
-    bottom: 20px;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 15px;
     z-index: 1000;
@@ -239,7 +241,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    background: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s, box-shadow 0.2s;
     text-decoration: none;
@@ -248,7 +250,6 @@ body {
 .social-icon:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 1);
 }
 
 .social-icon img {
@@ -261,7 +262,7 @@ body {
     position: fixed;
     top: 20px;
     left: 20px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     background: white;
     color: #667eea;
     border: none;
@@ -274,6 +275,13 @@ body {
     text-decoration: none;
     display: inline-block;
     z-index: 1000;
+}
+
+.home-btn img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
 .home-btn:hover {
