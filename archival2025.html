@@ -4,211 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archival Footage 2025</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 900px;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .login-container {
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .login-container h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .login-container p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .input-group input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .error {
-            color: #e74c3c;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-
-        .content-container {
-            display: none;
-            padding: 40px;
-        }
-
-        .content-container.active {
-            display: block;
-        }
-
-        .content-container h2 {
-            color: #333;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .logout-btn {
-            display: block;
-            margin: 20px auto 0;
-            padding: 10px 30px;
-            background: #e0e0e0;
-            color: #333;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .logout-btn:hover {
-            background: #d0d0d0;
-        }
-
-        .lock-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .social-icons {
-            position: fixed;
-            bottom: 20px;
-            display: flex;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .social-icon img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-        }
-
-        .home-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: white;
-            color: #667eea;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            display: inline-block;
-            z-index: 1000;
-        }
-
-        .home-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-    </style>
+    <link rel="stylesheet" href="styles-archival.css">
 </head>
 <body>
-    <a href="index.html" class="home-btn">← Home</a>
-    <div class="container">
-        <div class="login-container" id="loginContainer">
-            <div class="lock-icon" style="font-size: 2rem;">🔒</div>
+    <!-- Login Overlay -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <div class="lock-icon">🔒</div>
             <h1>Equity Archival - Pearl Studios, NYC</h1>
             <p>Produced by FilmFiftySix Productions</p>
-            <p style="font-style: italic;">Enter password to view the video</p>
+            <p style="font-style: italic;">Enter password to access this page</p>
             <form id="loginForm">
                 <div class="input-group">
                     <input type="password" id="passwordInput" placeholder="Enter password" required>
@@ -218,35 +23,103 @@
             </form>
             <p style="margin-top: 30px; font-size: 12px; color: #999;">Please do not share</p>
         </div>
+    </div>
 
-        <div class="content-container" id="contentContainer">
-            <h2>GRAVITY - A NEWTONIAN MUSICAL</h2>
+    <!-- Page Content (hidden until password is correct) -->
+    <div class="page-content" id="pageContent">
+        <a href="index.html" class="home-btn">← Home</a>
+        
+        <!-- Full Musical Section -->
+        <div class="container">
+            <h2>FULL MUSICAL (11.7.2025)</h2>
+            <h3>Pearl Studios, NYC</h3>
             <div class="video-wrapper">
                 <iframe 
-                    src="https://www.youtube.com/embed/oncE3wBIt94?si=4Rw5Py9FwK38nFpp"
+                    id="videoFrame"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
                 </iframe>
             </div>
+        </div>
+
+        <!-- Individual Songs Section -->
+        <div class="container" style="margin-top: 40px;">
+            <h2>INDIVIDUAL SONGS</h2>
+            <div class="songs-grid">
+                <div class="song-item">
+                    <h4>I Wanna Be Mad</h4>
+                    
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/AxdcOdW24EI?list=PLa9K_ReRyZa8RWe8zkJQANkkkz44AAy2Z"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5>Our introduction to Isaac Newton (imagine Isaac is playing the guitar!)</h5>
+                </div>
+                <div class="song-item">
+                    <h4>Let Us Enlighten You</h4>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/kF-NFJ0E3UA?list=PLa9K_ReRyZa8RWe8zkJQANkkkz44AAy2Z"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5>Our welcome to the world of 1666!</h5>
+                </div>
+                <div class="song-item">
+                    <h4>En Route</h4>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/FC1D5w8W828?list=PLa9K_ReRyZa8RWe8zkJQANkkkz44AAy2Z"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5>A romance begins between Isaac and Sophie</h5>
+                </div>
+                <div class="song-item">
+                    <h4>You Say Impossible</h4>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/egQBx8LgsYU?list=PLa9K_ReRyZa8RWe8zkJQANkkkz44AAy2Z"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5>Our introduction to Margaret Cavendish</h5>
+                </div>
+                <div class="song-item">
+                    <h4>Know My Name</h4>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/sn32_kh_6Rg?list=PLa9K_ReRyZa8RWe8zkJQANkkkz44AAy2Z"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5>Margaret and Sophie dream of changing the world</h5>
+                </div>
+            </div>
             <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/gravity_musical" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="images/socials/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/gravitymusical/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="images/socials/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <img src="images/socials/youtube.png" alt="Youtube">
+            </a>
         </div>
     </div>
 
-    <div class="social-icons">
-        <a href="https://www.instagram.com/gravity_musical" class="social-icon" target="_blank" rel="noopener noreferrer">
-            <img src="images/socials/instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/gravitymusical/" class="social-icon" target="_blank" rel="noopener noreferrer">
-            <img src="images/socials/facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.youtube.com/@gravitymusical9695" class="social-icon" target="_blank" rel="noopener noreferrer">
-            <img src="images/socials/youtube.png" alt="Youtube">
-        </a>
-    </div>
-
     <script>
-
-       
         // SHA-256 hash of the password
         const correctPasswordHash = '989d6acf27ec984d0aa546b74917a3533fc0bc6407d6ea81965b44c1f592f67f';
         
@@ -258,8 +131,6 @@
             const hashArray = Array.from(new Uint8Array(hashBuffer));
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
-        
-        let isLoggedIn = false;
 
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -268,12 +139,12 @@
             const errorMsg = document.getElementById('errorMsg');
             const hashedInput = await hashPassword(password);
             
-            
             if (hashedInput === correctPasswordHash) {
-                isLoggedIn = true;
-                document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('contentContainer').classList.add('active');
+                document.getElementById('loginOverlay').classList.add('hidden');
+                document.getElementById('pageContent').classList.add('visible');
                 errorMsg.textContent = '';
+                // Load the video after successful login
+                document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/oncE3wBIt94?si=4Rw5Py9FwK38nFpp';
             } else {
                 errorMsg.textContent = 'Incorrect password. Please try again.';
                 document.getElementById('passwordInput').value = '';
@@ -281,9 +152,8 @@
         });
 
         function logout() {
-            isLoggedIn = false;
-            document.getElementById('loginContainer').style.display = 'block';
-            document.getElementById('contentContainer').classList.remove('active');
+            document.getElementById('loginOverlay').classList.remove('hidden');
+            document.getElementById('pageContent').classList.remove('visible');
             document.getElementById('passwordInput').value = '';
             document.getElementById('errorMsg').textContent = '';
         }
