@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/YSI"
+  to = "https://www.youtube.com/watch?v=ZALe2vwB6zY&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=5"
+  status = 302
+
+[[redirects]]
+  from = "/TIWIT"
+  to = "https://www.youtube.com/watch?v=6GdAX4KG404&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=1"
+  status = 302
