@@ -7,3 +7,28 @@
   from = "/TIWIT"
   to = "https://www.youtube.com/watch?v=6GdAX4KG404&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=1"
   status = 302
+
+[[redirects]]
+  from = "/IWBM"
+  to = "https://www.youtube.com/watch?v=1bx8xFF-4jU&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=3"
+  status = 302
+
+[[redirects]]
+  from = "/IMOT"
+  to = "https://www.youtube.com/watch?v=0uL5HhHTrPE&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=6"
+  status = 302
+
+[[redirects]]
+  from = "/KMN"
+  to = "https://www.youtube.com/watch?v=l_irr1ggM6M&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=7"
+  status = 302
+
+[[redirects]]
+  from = "/en-route"
+  to = "https://www.youtube.com/watch?v=5zE18gff95M&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=4"
+  status = 302
+
+[[redirects]]
+  from = "/LUEY"
+  to = "https://www.youtube.com/watch?v=XhZab-B4dyo&list=PLa9K_ReRyZa_9CzNOwwxNrv1iobJf4mQV&index=3"
+  status = 302
